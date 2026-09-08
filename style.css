@@ -1,1 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 /* Add your CSS here */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+/* Blue hero container */
+header {
+  background-color: #0071c5;
+  color: white;
+  text-align: center;
+  padding: 56px 20px 64px;
+}
+
+header > div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Resize and center the Intel logo */
+header img {
+  width: 140px;
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+header h1 {
+  color: white;
+  font-size: 42px;
+  line-height: 1.15;
+  margin: 0;
+}
+
+header h1::after {
+  content: '';
+  display: block;
+  width: 45px;
+  height: 4px;
+  background-color: #00c7fd;
+  margin: 14px auto 18px;
+}
+
+header p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Keep the milestones in one horizontal, scrollable row on large screens. */
+.timeline {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  box-sizing: border-box;
+  padding: 40px max(24px, calc((100vw - 1192px) / 2));
+  background-color: #f4f8fb;
+}
+
+.milestone-card {
+  position: relative;
+  flex: 0 0 min(280px, calc((100vw - 120px) / 4));
+  background-color: white;
+  border: 1px solid #d6e2ea;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 48, 87, 0.12);
+  overflow: hidden;
+  padding-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.milestone-card:hover,
+.milestone-card:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 48, 87, 0.2);
+  outline: none;
+}
+
+.milestone-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.milestone-card h2,
+.milestone-card h3,
+.milestone-card p {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.milestone-card h2 {
+  color: #0071c5;
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+.milestone-card h3 {
+  color: #1d252c;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.milestone-card p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  color: white;
+  line-height: 1.5;
+  margin: 0;
+  padding: 16px;
+  background-color: rgba(0, 32, 74, 0.9);
+  opacity: 0;
+  overflow: auto;
+  transition: opacity 0.2s ease;
+}
+
+.milestone-card:hover p,
+.milestone-card:focus p {
+  opacity: 1;
+}
+
+.timeline-instruction {
+  color: #44515c;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 20px 32px;
+}
+
+/* Use smaller type on narrow screens so the hero stays easy to read. */
+@media (max-width: 600px) {
+  header {
+    padding: 40px 20px 48px;
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  /* Stack cards vertically instead of requiring horizontal scrolling. */
+  .timeline {
+    display: block;
+    padding: 24px 20px;
+  }
+
+  .milestone-card {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+  }
+
+  .milestone-card:last-child {
+    margin-bottom: 0;
+  }
+}
+
